@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "304576285825",
+    "firebase_url": "https://notas-59cad.firebaseio.com",
+    "project_id": "notas-59cad",
+    "storage_bucket": "notas-59cad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304576285825:android:95a1068b47dcaa00",
+        "android_client_info": {
+          "package_name": "com.notas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "304576285825-ur4cd299a2jc19j8ku5bc1nn8skl89p0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_4w6i2ch-wPSkoqGHJkJ-kbBZbcFKcyc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
