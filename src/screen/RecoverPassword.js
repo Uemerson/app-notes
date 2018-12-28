@@ -22,15 +22,17 @@ export default class RecoverPassword extends Component {
 
         if (emailAddress === '') {
             Alert.alert('Email vazio', 'Entre com um email!');
-        } else if (EmailValidator.validate(emailAddress)) {
+        } else if (!EmailValidator.validate(emailAddress)) {
             Alert.alert('Email inválido', 'Entre com um email válido!');
         } else {
 
-            firebase.auth().sendPasswordResetEmail(emailAddress).then(function () {
-                Alert.alert('Recuperação de senha', 'Foi enviado um email de recuperação de senha para ' + this.state.email);
-            }).catch(function (error) {
-                Alert.alert(error.code, error.menssage);
-            });
+            firebase.auth().sendPasswordResetEmail(emailAddress)
+                .then(() => {
+                    Alert.alert('Recuperação de senha', 'Foi enviado um email de recuperação de senha para ' + this.state.email);
+                }).catch((error) => {
+                    //Alert.alert(error.code, error.menssage);
+                    Alert.alert("Houve um erro", "Houve um erro ao tentar enviar email de recuperação de senha, tente novamente!");
+                });
 
         }
     }
@@ -38,7 +40,12 @@ export default class RecoverPassword extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <TextInput placeholder={"Entre com o email"} style={styles.input} />
+                <TextInput
+                    placeholder={"Entre com o email"}
+                    style={styles.input}
+                    onChangeText={email => this.setState({ email })}
+                    value={this.state.email} />
+
                 <TouchableOpacity style={styles.button} onPress={() => this.onPressRecoverPassword()}>
                     <Text style={styles.buttonText}>Recuperar a senha</Text>
                 </TouchableOpacity>
